@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,7 +31,13 @@ public class MainActivity extends AppCompatActivity {
         TextView text = findViewById(R.id.textView);
         text.setText(input.getText().toString());
 
-        Toast.makeText(this, "clicked button", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "clicked button", Toast.LENGTH_SHORT).show();
 
     }
+
+    public void launchActivity(View view){
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
 }
