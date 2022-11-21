@@ -3,9 +3,12 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,11 +18,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void disable(View v){
-        v.setEnabled(false);
-        Button button = (Button)v;
+    public void handleButton(View view){
+        Log.d("success", "clicked button");
+
+        //view.setEnabled(false);
+        Button button = (Button)view;
         button.setText("disabled");
+
+        EditText input = findViewById(R.id.input);
+
         TextView text = findViewById(R.id.textView);
-        text.setText("You clicked the button");
+        text.setText(input.getText().toString());
+
+        Toast.makeText(this, "clicked button", Toast.LENGTH_LONG).show();
+
     }
 }
