@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void launchActivity(View view){
         Intent intent = new Intent(this, SettingsActivity.class);
+        intent.putExtra("EXTRA", "Hello");
         startActivity(intent);
     }
 
